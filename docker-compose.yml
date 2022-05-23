@@ -1,7 +1,7 @@
 services:
   meli_client:
     build: client
-    command: sh -c "yarn build && yarn global add serve && serve -s build"
+    command: sh -c "yarn && yarn build && yarn global add serve && serve -s build"
     networks:
       - meli-network
     ports:
@@ -13,13 +13,16 @@ services:
 
   meli_server:
     build: server
-    command: sh -c "yarn build && yarn start:prod"
+    command: sh -c "yarn && yarn build && yarn start:prod"
     networks:
       - meli-network
     ports:
       - '3333:3333'
     volumes:
       - ./server:/usr/app
+    environment:
+      - JWT_EXPIRATION_TIME=7d
+      - JWT_SECRET=iyCrZCJ4oALf$db5XQ4F7B
 
 networks:
   meli-network:

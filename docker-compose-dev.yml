@@ -9,7 +9,7 @@ services:
     volumes:
       - ./client:/usr/app
     environment:
-      - REACT_APP_BASE_URL=http://localhost:3333
+      - REACT_APP_BASE_URL=http://192.168.0.106:3333
 
   meli_server:
     build: server
@@ -20,6 +20,9 @@ services:
       - '3333:3333'
     volumes:
       - ./server:/usr/app
+    environment:
+      - JWT_EXPIRATION_TIME=7d
+      - JWT_SECRET=iyCrZCJ4oALf$db5XQ4F7B
 
 networks:
   meli-network:
