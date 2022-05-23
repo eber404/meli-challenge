@@ -1,0 +1,21 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f5f2ea;
+  font-family: 'Inter', sans-serif;
+  margin: auto 0;
+  width: 100%;
+}
+
+#root {
+  width: 100%;
+}

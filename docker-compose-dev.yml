@@ -1,0 +1,27 @@
+services:
+  meli_client:
+    build: client
+    command: yarn start
+    networks:
+      - meli-network
+    ports:
+      - '3000:3000'
+    volumes:
+      - ./client:/usr/app
+    environment:
+      - REACT_APP_BASE_URL=http://localhost:3333
+
+  meli_server:
+    build: server
+    command: yarn start:dev
+    networks:
+      - meli-network
+    ports:
+      - '3333:3333'
+    volumes:
+      - ./server:/usr/app
+
+networks:
+  meli-network:
+    external: true
+    driver: bridge
