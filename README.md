@@ -10,7 +10,7 @@
 
 3. wait for the installation then access the link http://localhost:3000
 
-4. pick one account above to login:
+4. pick one account over to login:
 
 > email: john@email.com <br />
 > password: 123
