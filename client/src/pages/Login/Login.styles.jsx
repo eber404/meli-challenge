@@ -6,11 +6,17 @@ export const Container = styled.div`
   align-items: center;
   justify-content: flex-start;
   height: 575px;
-  width: 495px;
+  width: 100%;
+  max-width: 495px;
   border-radius: 15px;
   padding: 50px;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   background-color: #fff;
+
+  @media (max-width: 576px) {
+    padding: 30px;
+    padding-top: 50px;
+  }
 `
 
 export const Title = styled.h1`

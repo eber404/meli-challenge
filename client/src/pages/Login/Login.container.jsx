@@ -10,6 +10,7 @@ import { If } from '@/components/If'
 import { useAuth } from '@/hooks/useAuth'
 
 import * as Styled from './Login.styles'
+import { theme } from '@/styles/theme'
 
 export function Login() {
   const [email, setEmail] = useState('')
