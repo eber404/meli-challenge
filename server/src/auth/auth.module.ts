@@ -8,7 +8,6 @@ import { UserModule } from '@/user/user.module';
 
 import { LoginController } from '@/auth/controllers/login.controller';
 import { AuthService } from '@/auth/services/login.service';
-import { JWT_CONFIG } from '@/auth/config/jwt.config';
 import { JwtStrategy } from '@/auth/jwt.strategy';
 
 @Module({
@@ -16,8 +15,8 @@ import { JwtStrategy } from '@/auth/jwt.strategy';
     UserModule,
     PassportModule,
     JwtModule.register({
-      secret: JWT_CONFIG.secret,
-      signOptions: { expiresIn: JWT_CONFIG.expiration_time },
+      secret: process.env.JWT_SECRET,
+      signOptions: { expiresIn: process.env.JWT_EXPIRATION_TIME },
     }),
   ],
   providers: [
